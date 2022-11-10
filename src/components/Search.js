@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { ReactComponent as SearchIcon } from "../asset/search.svg";
+import SearchOption from "./SearchOption";
 
 const SearchBoxContainer = styled.div`
   width: 100%;
@@ -20,7 +21,7 @@ const SearchInputContainer = styled.div`
 
 const SearchInput = styled.input`
   flex: auto;
-  color: lightgrey;
+  color: #5e5e5e;
   font-size: 1rem;
   background-color: transparent;
   border: none;
@@ -49,6 +50,7 @@ const Search = () => {
           옵션 {searchOption ? "닫기" : "열기"}
         </SearchOptionButton>
       </SearchInputContainer>
+      <SearchOption />
     </SearchBoxContainer>
   );
 };
