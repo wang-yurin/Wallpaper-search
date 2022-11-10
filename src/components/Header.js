@@ -1,6 +1,7 @@
 import App from "../App";
 import styled from "styled-components";
 import GlobalStyles from "../style/GlobalStyle";
+import Search from "./Search";
 
 const Container = styled.section`
   width: 100%;
@@ -15,9 +16,7 @@ const Contents = styled.div`
   font-family: "Jua", sans-serif;
 `;
 
-const HeaderTitle = styled.h1`
-  margin: 0;
-`;
+const HeaderTitle = styled.h1``;
 
 const HeaderTitleLink = styled.a`
   display: block;
@@ -39,6 +38,7 @@ const Header = () => {
             <HeaderTitleLink href="#">배경화면 검색</HeaderTitleLink>
           </HeaderTitle>
           <HeaderSubTitle>🔍 배경화면을 찾아보자 👀</HeaderSubTitle>
+          <Search />
         </Contents>
       </Container>
     </>
