@@ -2,6 +2,14 @@ import { useState } from "react";
 import styled from "styled-components";
 import { ReactComponent as SearchIcon } from "../asset/search.svg";
 import SearchOption from "./SearchOption";
+import SearchTag from "./SearchTag";
+
+const SearchTagContainer = styled.div`
+  display: flex;
+  width: 100%;
+  overflow: auto;
+  justify-content: center;
+`;
 
 const SearchBoxContainer = styled.div`
   width: 100%;
@@ -42,16 +50,21 @@ const Search = () => {
   };
 
   return (
-    <SearchBoxContainer>
-      <SearchInputContainer>
-        <SearchIcon width="24" fill="#5e5e5e" />
-        <SearchInput placeholder="검색어를 입력해주세요" />
-        <SearchOptionButton onClick={toggleSearchOption}>
-          옵션 {searchOption ? "닫기" : "열기"}
-        </SearchOptionButton>
-      </SearchInputContainer>
-      <SearchOption />
-    </SearchBoxContainer>
+    <>
+      <SearchBoxContainer>
+        <SearchInputContainer>
+          <SearchIcon width="24" fill="#5e5e5e" />
+          <SearchInput placeholder="검색어를 입력해주세요" />
+          <SearchOptionButton onClick={toggleSearchOption}>
+            옵션 {searchOption ? "닫기" : "열기"}
+          </SearchOptionButton>
+        </SearchInputContainer>
+        <SearchOption />
+      </SearchBoxContainer>
+      <SearchTagContainer>
+        <SearchTag />
+      </SearchTagContainer>
+    </>
   );
 };
 
