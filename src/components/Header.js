@@ -13,10 +13,11 @@ const Contents = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Jua", sans-serif;
 `;
 
-const HeaderTitle = styled.h1``;
+const HeaderTitle = styled.h1`
+  font-family: "Jua", sans-serif;
+`;
 
 const HeaderTitleLink = styled.a`
   display: block;
@@ -26,7 +27,9 @@ const HeaderTitleLink = styled.a`
   font-size: 3rem;
 `;
 
-const HeaderSubTitle = styled.p``;
+const HeaderSubTitle = styled.p`
+  font-family: "Jua", sans-serif;
+`;
 
 const Header = () => {
   return (
