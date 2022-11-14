@@ -1,5 +1,7 @@
 import styled from "styled-components";
+import Header from "./components/Header.js";
 import "./App.css";
+import ResultContainer from "./components/ResultContainer.js";
 
 const Container = styled.div`
   background-color: #fff;
@@ -8,9 +10,10 @@ const Container = styled.div`
 
 function App() {
   return (
-    <>
-      <Container />
-    </>
+    <Container>
+      <Header />
+      <ResultContainer />
+    </Container>
   );
 }
 
