@@ -2,6 +2,7 @@ import styled from "styled-components";
 import DummyData from "../asset/dummyData";
 import Pagination from "./Pagination";
 import ImageCard from "./ImageCard";
+import ImageModal from "./ImageModal";
 
 const Container = styled.div`
   max-width: 1800px;
@@ -20,6 +21,7 @@ const ResultContainer = () => {
   const data = DummyData;
   return (
     <Container>
+      {/* <ImageModal></ImageModal> */}
       <Pagination></Pagination>
       <ResultWrapper>
         {data.hits.map((imgData) => (
