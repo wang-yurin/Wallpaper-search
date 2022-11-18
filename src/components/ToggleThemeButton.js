@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { ReactComponent as LightIcon } from "../asset/light.svg";
 import { ReactComponent as DarkIcon } from "../asset/dark.svg";
+import { useState } from "react";
 
 const Button = styled.div`
   display: flex;
@@ -22,10 +23,19 @@ const Button = styled.div`
 `;
 
 const ToggleThemeButton = () => {
+  const [theme, setTheme] = useState("light");
+  const toggleThemeHandler = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+  };
+
   return (
-    <Button>
-      <DarkIcon width="50" height="50" fill="#fff" />
-      <LightIcon width="50" height="50" fill="#fff" />
+    <Button onClick={toggleThemeHandler}>
+      {theme === "light" ? (
+        <DarkIcon width="50" height="50" fill="#fff" />
+      ) : (
+        <LightIcon width="50" height="50" fill="#fff" />
+      )}
     </Button>
   );
 };
