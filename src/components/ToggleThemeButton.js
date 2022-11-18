@@ -13,6 +13,7 @@ const Button = styled.div`
   height: 50px;
   background-color: #455a64;
   border-radius: 50%;
+  box-shadow: 0 5px 6px 0px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   &:hover {
     background-color: #808e95;
