@@ -3,6 +3,7 @@ import Header from "./components/Header.js";
 import "./App.css";
 import ResultContainer from "./components/ResultContainer.js";
 import Footer from "./components/Footer.js";
+import ToggleThemeButton from "./components/ToggleThemeButton.js";
 
 const Container = styled.div`
   background-color: #fff;
@@ -15,6 +16,7 @@ function App() {
       <Header />
       <ResultContainer />
       <Footer />
+      <ToggleThemeButton />
     </Container>
   );
 }
