@@ -4,10 +4,26 @@
 
 <br>
 
-## 기술 스택
+## ⚒️ 기술 스택
 
 - React
 - Styled-components
+
+<br>
+
+## ✅ 기능 구현
+
+### pixabay API 연동하기
+
+- pixabay에서 제공하는 이미지 조회 API를 연동하여 화면 렌더링
+- 개인 API key가 노출되지 않도록 .env에 별도로 작성
+- fetch API 사용
+
+> request URL 예시
+
+```
+https://pixabay.com/api/?key={ 개인 API Key }&q=yellow+flowers&image_type=photo
+```
 
 <br>
 <br>
