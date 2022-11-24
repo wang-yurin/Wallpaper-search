@@ -95,8 +95,41 @@ class와 for는 자바스크립트와 ECMAScript의 예약어고, JSX는 일반 
 ```
 
 <br>
+
+## 배경화면 검색 기능
+
+### URL의 구조
+
+<a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL">What is a URL?</a>
+
+<h3>?key1=value1&key2=value2</h3>
+↪ Parameters
+
+- 검색 키워드로 URL encoded 형태여야 한다.
+  <a href='https://developer.mozilla.org/ko/docs/Web/API/URLSearchParams'>URLSearchParams</a>
+
+URLSearchParams 객체를 이용한다.
+쿼리 파라미터를 조작할 수 있는 다양한 메서드들이 존재한다.
+
+```js
+const params = new URLSearchParams({ foo: "1", bar: "2" });
+params.toString(); // 'foo=1&bar=2'
+
+const params2 = new URLSearchParams({ foo: "1", q: "오잉?*^^*" });
+params2.toString(); // 'foo=1&q=%EC%98%A4%EC%9E%89%3F*%5E%5E*'
+
+// 삭제
+params2.delete("foo");
+params2.toString(); // 'q=%EC%98%A4%EC%9E%89%3F*%5E%5E*'
+
+// 추가
+params2.append("foo", "추가하자!");
+params2.toString(); // 'q=%EC%98%A4%EC%9E%89%3F*%5E%5E*&foo=%EC%B6%94%EA%B0%80%ED%95%98%EC%9E%90%21'
+```
+
 <br>
 
 # 구현 시 고민
 
 - Header 컴포넌트 뎁스가 깊어졌는데 줄여야할까?
+- fetch API는 응답 데이터를 뽑아오기 위해서 request 함수가 반복 될 수 있기 때문에 별도의 파일로 관리
