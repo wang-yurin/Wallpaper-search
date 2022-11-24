@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import DummyData from "../asset/dummyData";
 import Pagination from "./Pagination";
 import ImageCard from "./ImageCard";
 import ImageModal from "./ImageModal";
 import EmptyResult from "./EmptyResult";
+import getWallpapers from "../api/getWallpapers";
+import { useState, useEffect } from "react";
 
 const Container = styled.div`
   max-width: 1800px;
@@ -19,13 +20,22 @@ const ResultWrapper = styled.div`
 `;
 
 const ResultContainer = () => {
-  const data = DummyData;
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    const fetch = async () => {
+      const data = await getWallpapers();
+      setData(data);
+    };
+    fetch();
+  }, []);
+
   return (
     <Container>
       {/* <ImageModal></ImageModal> */}
       <Pagination></Pagination>
       <ResultWrapper>
-        {data.hits.map((imgData) => (
+        {data.hits?.map((imgData) => (
           <ImageCard key={imgData.id} imgData={imgData} />
         ))}
         {/* <EmptyResult /> */}
