@@ -28,7 +28,7 @@ function App() {
 
   return (
     <Container>
-      <Header />
+      <Header setQuery={setQuery} />
       <ResultContainer data={data} />
       <Footer />
       <ToggleThemeButton />

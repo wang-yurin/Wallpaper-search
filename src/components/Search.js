@@ -42,7 +42,7 @@ const SearchOptionButton = styled.p`
   cursor: pointer;
 `;
 
-const Search = () => {
+const Search = ({ setQuery }) => {
   const [searchOption, setSearchOption] = useState(false);
 
   const toggleSearchOption = () => {

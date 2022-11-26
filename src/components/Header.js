@@ -1,4 +1,3 @@
-import App from "../App";
 import styled from "styled-components";
 import GlobalStyles from "../style/GlobalStyle";
 import Search from "./Search";
@@ -31,7 +30,7 @@ const HeaderSubTitle = styled.p`
   font-family: "Jua", sans-serif;
 `;
 
-const Header = () => {
+const Header = ({ setQuery }) => {
   return (
     <>
       <GlobalStyles />
@@ -41,7 +40,7 @@ const Header = () => {
             <HeaderTitleLink href="#">배경화면 검색</HeaderTitleLink>
           </HeaderTitle>
           <HeaderSubTitle>🔍 배경화면을 찾아보자 👀</HeaderSubTitle>
-          <Search />
+          <Search setQuery={setQuery} />
         </Contents>
       </Container>
     </>
