@@ -3,8 +3,6 @@ import Pagination from "./Pagination";
 import ImageCard from "./ImageCard";
 import ImageModal from "./ImageModal";
 import EmptyResult from "./EmptyResult";
-import getWallpapers from "../api/getWallpapers";
-import { useState, useEffect } from "react";
 
 const Container = styled.div`
   max-width: 1800px;
@@ -19,17 +17,7 @@ const ResultWrapper = styled.div`
   width: 100%;
 `;
 
-const ResultContainer = () => {
-  const [data, setData] = useState({});
-
-  useEffect(() => {
-    const fetch = async () => {
-      const data = await getWallpapers();
-      setData(data);
-    };
-    fetch();
-  }, []);
-
+const ResultContainer = ({ data }) => {
   return (
     <Container>
       {/* <ImageModal></ImageModal> */}
