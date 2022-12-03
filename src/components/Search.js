@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { ReactComponent as SearchIcon } from '../asset/search.svg';
 import SearchOption from './SearchOption';
@@ -44,6 +44,7 @@ const SearchOptionButton = styled.p`
 
 const Search = ({ setQuery }) => {
   const [searchOption, setSearchOption] = useState(false);
+  const inputRef = useRef(null);
 
   const toggleSearchOption = () => {
     setSearchOption((prev) => !prev);
@@ -53,6 +54,7 @@ const Search = ({ setQuery }) => {
     if (event.key === 'Enter') {
       const currentValue = event.target.value;
       setQuery(currentValue);
+      inputRef.current.value = '';
     }
   };
 
@@ -64,6 +66,7 @@ const Search = ({ setQuery }) => {
           <SearchInput
             placeholder="검색어를 입력해주세요"
             onKeyPress={onSearch}
+            ref={inputRef}
           />
           <SearchOptionButton onClick={toggleSearchOption}>
             옵션 {searchOption ? '닫기' : '열기'}
