@@ -1,8 +1,8 @@
-import { useState } from "react";
-import styled from "styled-components";
-import { ReactComponent as SearchIcon } from "../asset/search.svg";
-import SearchOption from "./SearchOption";
-import SearchTag from "./SearchTag";
+import { useState } from 'react';
+import styled from 'styled-components';
+import { ReactComponent as SearchIcon } from '../asset/search.svg';
+import SearchOption from './SearchOption';
+import SearchTag from './SearchTag';
 
 const SearchTagContainer = styled.div`
   display: flex;
@@ -49,14 +49,24 @@ const Search = ({ setQuery }) => {
     setSearchOption((prev) => !prev);
   };
 
+  const onSearch = (event) => {
+    if (event.key === 'Enter') {
+      const currentValue = event.target.value;
+      setQuery(currentValue);
+    }
+  };
+
   return (
     <>
       <SearchBoxContainer>
         <SearchInputContainer>
           <SearchIcon width="24" fill="#5e5e5e" />
-          <SearchInput placeholder="검색어를 입력해주세요" />
+          <SearchInput
+            placeholder="검색어를 입력해주세요"
+            onKeyPress={onSearch}
+          />
           <SearchOptionButton onClick={toggleSearchOption}>
-            옵션 {searchOption ? "닫기" : "열기"}
+            옵션 {searchOption ? '닫기' : '열기'}
           </SearchOptionButton>
         </SearchInputContainer>
         <SearchOption />

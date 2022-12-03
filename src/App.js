@@ -24,7 +24,7 @@ function App() {
       setData(data);
     };
     fetch();
-  }, []);
+  }, [query]);
 
   return (
     <Container>
