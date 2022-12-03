@@ -1,11 +1,11 @@
-import "./App.css";
-import styled from "styled-components";
-import { useState, useEffect } from "react";
-import Header from "./components/Header.js";
-import ResultContainer from "./components/ResultContainer.js";
-import Footer from "./components/Footer.js";
-import ToggleThemeButton from "./components/ToggleThemeButton.js";
-import getWallpapers from "./api/getWallpapers.js";
+import './App.css';
+import styled from 'styled-components';
+import { useState, useEffect } from 'react';
+import Header from './components/Header.js';
+import ResultContainer from './components/ResultContainer.js';
+import Footer from './components/Footer.js';
+import ToggleThemeButton from './components/ToggleThemeButton.js';
+import getWallpapers from './api/getWallpapers.js';
 
 const Container = styled.div`
   background-color: #fff;
@@ -14,7 +14,7 @@ const Container = styled.div`
 
 function App() {
   const [data, setData] = useState({});
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
 
   useEffect(() => {
     const fetch = async () => {

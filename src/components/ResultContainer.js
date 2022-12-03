@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import Pagination from "./Pagination";
-import ImageCard from "./ImageCard";
-import ImageModal from "./ImageModal";
-import EmptyResult from "./EmptyResult";
+import styled from 'styled-components';
+import Pagination from './Pagination';
+import ImageCard from './ImageCard';
+import ImageModal from './ImageModal';
+import EmptyResult from './EmptyResult';
 
 const Container = styled.div`
   max-width: 1800px;

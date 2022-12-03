@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import GlobalStyles from "../style/GlobalStyle";
-import Search from "./Search";
+import styled from 'styled-components';
+import GlobalStyles from '../style/GlobalStyle';
+import Search from './Search';
 
 const Container = styled.section`
   width: 100%;
@@ -15,7 +15,7 @@ const Contents = styled.div`
 `;
 
 const HeaderTitle = styled.h1`
-  font-family: "Jua", sans-serif;
+  font-family: 'Jua', sans-serif;
 `;
 
 const HeaderTitleLink = styled.a`
@@ -27,7 +27,7 @@ const HeaderTitleLink = styled.a`
 `;
 
 const HeaderSubTitle = styled.p`
-  font-family: "Jua", sans-serif;
+  font-family: 'Jua', sans-serif;
 `;
 
 const Header = ({ setQuery }) => {

@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { ReactComponent as PrevIcon } from "../asset/prev.svg";
-import { ReactComponent as NextIcon } from "../asset/next.svg";
+import styled from 'styled-components';
+import { ReactComponent as PrevIcon } from '../asset/prev.svg';
+import { ReactComponent as NextIcon } from '../asset/next.svg';
 
 const Nav = styled.nav`
   display: flex;
