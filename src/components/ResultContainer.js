@@ -21,12 +21,15 @@ const ResultContainer = ({ data }) => {
   return (
     <Container>
       {/* <ImageModal></ImageModal> */}
-      <Pagination></Pagination>
+      {data.hits.length > 0 && <Pagination />}
       <ResultWrapper>
-        {data.hits?.map((imgData) => (
-          <ImageCard key={imgData.id} imgData={imgData} />
-        ))}
-        {/* <EmptyResult /> */}
+        {data.hits.length > 0 ? (
+          data.hits?.map((imgData) => (
+            <ImageCard key={imgData.id} imgData={imgData} />
+          ))
+        ) : (
+          <EmptyResult />
+        )}
       </ResultWrapper>
     </Container>
   );
