@@ -44,6 +44,7 @@ const SearchOptionButton = styled.p`
 
 const Search = ({ setQuery }) => {
   const [searchOption, setSearchOption] = useState(false);
+  const [searchTags, SetSearchTags] = useState([]);
   const inputRef = useRef(null);
 
   const toggleSearchOption = () => {
@@ -55,6 +56,7 @@ const Search = ({ setQuery }) => {
       const currentValue = event.target.value;
       setQuery(currentValue);
       inputRef.current.value = '';
+      SetSearchTags((prev) => [...prev, currentValue]);
     }
   };
 
@@ -75,7 +77,9 @@ const Search = ({ setQuery }) => {
         <SearchOption />
       </SearchBoxContainer>
       <SearchTagContainer>
-        <SearchTag />
+        {searchTags.map((tag) => (
+          <SearchTag tag={tag} />
+        ))}
       </SearchTagContainer>
     </>
   );
