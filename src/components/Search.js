@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { ReactComponent as SearchIcon } from '../asset/search.svg';
@@ -43,8 +44,11 @@ const SearchOptionButton = styled.p`
 `;
 
 const Search = ({ setQuery }) => {
+  const savedSearchTags = localStorage.getItem('searchTags');
+  const initalSearchTags = savedSearchTags ? JSON.parse(savedSearchTags) : [];
+
   const [searchOption, setSearchOption] = useState(false);
-  const [searchTags, SetSearchTags] = useState([]);
+  const [searchTags, SetSearchTags] = useState(initalSearchTags);
   const inputRef = useRef(null);
 
   const toggleSearchOption = () => {
@@ -66,11 +70,13 @@ const Search = ({ setQuery }) => {
 
   const handleDeleteTag = (idx) => {
     const newSearchTags = [...searchTags];
-    console.log('before', newSearchTags);
     newSearchTags.splice(idx, 1);
-    console.log('after', newSearchTags);
     SetSearchTags(newSearchTags);
   };
+
+  useEffect(() => {
+    localStorage.setItem('searchTags', JSON.stringify(searchTags));
+  }, [searchTags]);
 
   return (
     <>
