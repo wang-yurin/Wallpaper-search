@@ -21,9 +21,9 @@ const ResultContainer = ({ data }) => {
   return (
     <Container>
       {/* <ImageModal></ImageModal> */}
-      {data.hits.length > 0 && <Pagination />}
+      {data.hits?.length > 0 && <Pagination />}
       <ResultWrapper>
-        {data.hits.length > 0 ? (
+        {data.hits?.length > 0 ? (
           data.hits?.map((imgData) => (
             <ImageCard key={imgData.id} imgData={imgData} />
           ))
