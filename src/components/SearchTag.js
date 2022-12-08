@@ -19,9 +19,9 @@ const TagLabel = styled.span`
   }
 `;
 
-const SearchTag = ({ tag }) => {
+const SearchTag = ({ tag, searchTag }) => {
   return (
-    <Tag>
+    <Tag onClick={searchTag}>
       <TagLabel>{tag}</TagLabel>
       <DeleteIcon width="12px" cursor="pointer" />
     </Tag>
