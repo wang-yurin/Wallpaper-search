@@ -64,6 +64,14 @@ const Search = ({ setQuery }) => {
     setQuery(tag);
   };
 
+  const handleDeleteTag = (idx) => {
+    const newSearchTags = [...searchTags];
+    console.log('before', newSearchTags);
+    newSearchTags.splice(idx, 1);
+    console.log('after', newSearchTags);
+    SetSearchTags(newSearchTags);
+  };
+
   return (
     <>
       <SearchBoxContainer>
@@ -81,8 +89,12 @@ const Search = ({ setQuery }) => {
         <SearchOption />
       </SearchBoxContainer>
       <SearchTagContainer>
-        {searchTags.map((tag) => (
-          <SearchTag tag={tag} searchTag={() => searchTag(tag)} />
+        {searchTags.map((tag, idx) => (
+          <SearchTag
+            tag={tag}
+            searchTag={() => searchTag(tag)}
+            handleDeleteTag={() => handleDeleteTag(idx)}
+          />
         ))}
       </SearchTagContainer>
     </>
