@@ -15,20 +15,28 @@ const Container = styled.div`
 function App() {
   const [data, setData] = useState({});
   const [query, setQuery] = useState('');
+  const [order, setOrder] = useState('popular');
+  const [orientation, setOrientation] = useState('all');
 
   useEffect(() => {
     const fetch = async () => {
       const data = await getWallpapers({
         q: query,
+        order: order,
+        orientation: orientation,
       });
       setData(data);
     };
     fetch();
-  }, [query]);
+  }, [query, order, orientation]);
 
   return (
     <Container>
-      <Header setQuery={setQuery} />
+      <Header
+        setQuery={setQuery}
+        setOrder={setOrder}
+        setOrientation={setOrientation}
+      />
       <ResultContainer data={data} />
       <Footer />
       <ToggleThemeButton />

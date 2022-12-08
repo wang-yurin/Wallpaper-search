@@ -43,7 +43,7 @@ const SearchOptionButton = styled.p`
   cursor: pointer;
 `;
 
-const Search = ({ setQuery }) => {
+const Search = ({ setQuery, setOrder, setOrientation }) => {
   const savedSearchTags = localStorage.getItem('searchTags');
   const initalSearchTags = savedSearchTags ? JSON.parse(savedSearchTags) : [];
 
@@ -92,7 +92,9 @@ const Search = ({ setQuery }) => {
             옵션 {searchOption ? '닫기' : '열기'}
           </SearchOptionButton>
         </SearchInputContainer>
-        <SearchOption />
+        {searchOption && (
+          <SearchOption setOrder={setOrder} setOrientation={setOrientation} />
+        )}
       </SearchBoxContainer>
       <SearchTagContainer>
         {searchTags.map((tag, idx) => (

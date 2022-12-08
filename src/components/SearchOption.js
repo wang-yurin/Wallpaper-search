@@ -25,23 +25,35 @@ const SearchOptionLabel = styled.p`
   font-weight: 500;
 `;
 
-const SearchOption = () => {
+const SearchOption = ({ setOrder, setOrientation }) => {
   return (
     <SearchOptionContainer>
       <SearchOptionUl>
         <SearchOptionLi>
           <SearchOptionLabel>정렬</SearchOptionLabel>
-          <form id="order">
+          <form id="order" onChange={(e) => setOrder(e.target.value)}>
             <input type="radio" name="order" id="latest" value="latest" />
             <label htmlFor="latest">최신순</label>
-            <input type="radio" name="order" id="popular" value="popular" />
+            <input
+              type="radio"
+              name="order"
+              id="popular"
+              value="popular"
+              defaultChecked={true}
+            />
             <label htmlFor="popular">인기순</label>
           </form>
         </SearchOptionLi>
         <SearchOptionLi>
           <SearchOptionLabel>사진 방향</SearchOptionLabel>
-          <form id="direction">
-            <input type="radio" name="direction" id="all" value="all" />
+          <form id="direction" onChange={(e) => setOrientation(e.target.value)}>
+            <input
+              type="radio"
+              name="direction"
+              id="all"
+              value="all"
+              defaultChecked={true}
+            />
             <label htmlFor="all">모두</label>
             <input
               type="radio"

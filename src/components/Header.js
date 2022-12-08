@@ -30,7 +30,7 @@ const HeaderSubTitle = styled.p`
   font-family: 'Jua', sans-serif;
 `;
 
-const Header = ({ setQuery }) => {
+const Header = ({ setQuery, setOrder, setOrientation }) => {
   return (
     <>
       <GlobalStyles />
@@ -40,7 +40,11 @@ const Header = ({ setQuery }) => {
             <HeaderTitleLink href="#">배경화면 검색</HeaderTitleLink>
           </HeaderTitle>
           <HeaderSubTitle>🔍 배경화면을 찾아보자 👀</HeaderSubTitle>
-          <Search setQuery={setQuery} />
+          <Search
+            setQuery={setQuery}
+            setOrder={setOrder}
+            setOrientation={setOrientation}
+          />
         </Contents>
       </Container>
     </>
