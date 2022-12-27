@@ -56,7 +56,7 @@ https://pixabay.com/api/?key={ 개인 API Key }&q=yellow+flowers&image_type=phot
 리액트 패키지에서 `useState` 함수를 불러온다.
 
 ```js
-import React, { useState } from "react";
+import React, { useState } from 'react';
 ```
 
 `useState`를 사용할 때에는 상태의 기본값을 파라미터로 넣어서 호출해준다. 함수를 호출하면 배열이 반환된다. `[현재 상태, Setter 함수]`
@@ -69,7 +69,7 @@ Setter 함수는 파라미터로 전달 받은 값을 최신 상태로 설정해
 ### 컴포넌트로 사용하는 방법
 
 ```js
-import { ReactComponent as 컴포넌트명 } from "svg 경로";
+import { ReactComponent as 컴포넌트명 } from 'svg 경로';
 
 <컴포넌트명 />;
 ```
@@ -112,18 +112,18 @@ URLSearchParams 객체를 이용한다.
 쿼리 파라미터를 조작할 수 있는 다양한 메서드들이 존재한다.
 
 ```js
-const params = new URLSearchParams({ foo: "1", bar: "2" });
+const params = new URLSearchParams({ foo: '1', bar: '2' });
 params.toString(); // 'foo=1&bar=2'
 
-const params2 = new URLSearchParams({ foo: "1", q: "오잉?*^^*" });
+const params2 = new URLSearchParams({ foo: '1', q: '오잉?*^^*' });
 params2.toString(); // 'foo=1&q=%EC%98%A4%EC%9E%89%3F*%5E%5E*'
 
 // 삭제
-params2.delete("foo");
+params2.delete('foo');
 params2.toString(); // 'q=%EC%98%A4%EC%9E%89%3F*%5E%5E*'
 
 // 추가
-params2.append("foo", "추가하자!");
+params2.append('foo', '추가하자!');
 params2.toString(); // 'q=%EC%98%A4%EC%9E%89%3F*%5E%5E*&foo=%EC%B6%94%EA%B0%80%ED%95%98%EC%9E%90%21'
 ```
 
@@ -133,3 +133,5 @@ params2.toString(); // 'q=%EC%98%A4%EC%9E%89%3F*%5E%5E*&foo=%EC%B6%94%EA%B0%80%E
 
 - Header 컴포넌트 뎁스가 깊어졌는데 줄여야할까?
 - fetch API는 응답 데이터를 뽑아오기 위해서 request 함수가 반복 될 수 있기 때문에 별도의 파일로 관리
+
+### Github, Discord webhook 연동
